@@ -1,0 +1,191 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'idroid';
+    src: url(materiais/fontes/idroid.otf) format(opentype);
+    font-weight: normal;
+    font-style: normal;}
+
+:root {
+    --cor0: white;                                              /* Variáveis em CSS*/
+    --cor1: #c9e9e8;
+    --cor2: #36827F;
+    --cor3: #154643;
+    --cor4: #baebe9;
+    --fonte-padrao: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fonte-android: 'idroid', sans-serif;
+}
+
+a.linkexterno::after {     /*Aqui eu coloquei para que depois de toda palavra com link, apareça um emoji de link */
+    content: "\1F517";
+}
+
+body {
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor1);
+}
+
+header {
+    background-color: var(--cor2);
+    padding: 13px 12px 7px 15px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    box-shadow: inset 0px -50px 28px rgba(0, 0, 0, 0.322);
+}
+
+header > h1 {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.295);
+}
+
+header > h2 {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+header > nav {
+    text-align: left;
+}
+
+nav > a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px 8px 10px;
+    border-radius: 5px 5px 0px 0px;
+    font-weight: bold;
+    font-size: 13px;
+    background-color: #00000000;
+}
+
+nav > a:hover {
+    background-color: var(--cor2);
+    transition-duration: 0.2s;                      /* EFEITO HOVER */
+}
+main {
+    margin: auto;
+    min-width: 320px;
+    max-width: 800px; 
+    background-color: white;
+    padding: 15px;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.484);
+}
+main > article{
+    margin: auto;
+}
+main p {
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.8em;                 /* Isto é a altura/espaço entre as linhas - tipo o 1.5 e 1.15 do Word */
+}
+main strong {
+    color: var(--cor3);
+}
+main h2 {
+    margin: 0px;
+    font-family: var(--fonte-android);
+    color: var(--cor3);
+    font-weight: normal;
+}
+main h3 {
+    font-family: var(--fonte-android);
+    color: var(--cor3);                               /* Aqui usei a cor em variável*/
+    background-image: linear-gradient(to right, #23c4bf89, white );
+    padding-left: 8px;
+    font-weight: normal;
+}
+main img {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+#bugdroid{
+    display: block;
+    margin: auto;
+    width: 50%;
+    max-width: 350px;
+}
+
+div.video {                                     /*VIDEO RESPONSIVO*/
+    background-color: var(--cor3);
+    margin: 0px -15px 30px -15px;
+    padding: 20px;
+    padding-bottom: 55.8%;  /* testar o valor aqui para retirar a barra preta chatar dentro do player */
+    position: relative;
+}
+
+div.video > iframe {                            /*VIDEO RESPONSIVO*/
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+
+}
+
+main a {
+    text-decoration: none;
+    color: #154643;
+    background-color: #84ccca;
+    padding: 2px 6px;
+}
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor2);
+}
+
+aside {
+    background-color: var(--cor4);
+    border-radius: 15px;
+    padding: 3px 10px 10px 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.402);
+}
+aside > h4 {
+    background-color: #2f7d77;
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px;  /* Aqui a margem cresceu p dentro da margem do aside (valor negativo)
+                                       TÍTULO IMBUTIDO */
+    border-radius: 10px 10px 0px 0px;
+
+}
+aside > ul {                                        /* Estilizando listas */
+    list-style-position: inside;                    /* Para a "bolinha" ficar para dentro do texto */
+    columns: 2;                                     /*duas colunas*/
+    list-style-type: "\2714";   /*aqui troquei a bolinha da lista por emoji (por código emojipedia)*/
+}
+
+footer {
+    background-color: #154643;
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+footer > p {
+    text-align: center;
+    font-size: 13px;
+    padding: 4px;
+}
+
+
+/* <!-- Para centralizar a imagem é:
+display: flex;
+justify-content: center;
+
+Pra quem estiver com problema de a imagem não adaptar ao tamanho da tela mesmo usando o width: 100%;
+O problema é que você provavelmente esta usando um id ou class e definindo ela no css como .fotos ou img#fotos ou qualquer variante disso, o certo é como ele botou no vídeo.
+É pq ele depende do elemento pai que é o main para ficar em 100%. 
+
+Coloca:
+
+main img{
+width: 100%;
+display: flex;
+
+justify-content: center;
+}
+
+que vai funcionar e ficar centralizado, falou!!
+Demorei um bom tempo pesquisando kkkk
+
+EDIT: para a imagem do bugdroid ficar pequeno e centralizar, define uma class e no css coloca .foto ou o nome que você definiu e deixa do jeito que ele faz no vídeo que funciona.-->*/
